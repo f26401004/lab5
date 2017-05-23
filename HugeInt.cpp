@@ -139,68 +139,7 @@ HugeInt::HugeInt(string s_value)
 			num_list.push_back(s_value[i] - '0');
 	}
 }
-/*
-HugeInt HugeInt::operator+(HugeInt add_object)
-{
-	if (add_object.num_list.size() < num_list.size())
-	{
-		for (int i = add_object.num_list.size() - 1 ; i > -1 ; --i)
-			*(num_list.end() - (add_object.num_list.size() - i)) += add_object.num_list.at(i);
 
-		for (int i = num_list.size() - 1 ; i > -1 ; --i)
-		{
-			if (num_list.at(i) < -9)
-			{
-				*(num_list.begin() + i) += 10;
-				if (i == 0)
-					num_list.insert(num_list.begin(), -1);
-				else
-					--*(num_list.begin() + i - 1);
-			}
-			else if (num_list.at(i) > 9)
-			{
-				*(num_list.begin() + i) -= 10;
-                                if (i == 0)
-                                        num_list.insert(num_list.begin(), 1);
-                                else
-                                        ++*(num_list.begin() + i - 1);
-			}
-		}
-		return *this;
-	}
-	else
-	{
-		for (int i = num_list.size() - 1 ; i > -1 ; --i)
-			*(add_object.num_list.end() - (num_list.size() - i)) += num_list.at(i);
-		for (int i = add_object.num_list.size() - 1 ; i > -1 ; --i)
-                {
-                        if (add_object.num_list.at(i) < -9)
-                        {
-                                *(add_object.num_list.begin() + i) += 10;
-                                if (i == 0)
-                                        add_object.num_list.insert(add_object.num_list.begin(), -1);
-                                else
-                                        --*(add_object.num_list.begin() + i - 1);
-                        }
-                        else if (add_object.num_list.at(i) > 9)
-                        {
-                                *(add_object.num_list.begin() + i) -= 10;
-                                if (i == 0)
-                                        add_object.num_list.insert(add_object.num_list.begin(), 1);
-                                else
-                                        ++*(add_object.num_list.begin() + i - 1);
-                        }
-                }
-		return add_object;
-	}
-}
-
-
-HugeInt HugeInt::operator-(HugeInt minus_object)
-{
-	return *(this) + minus_object*(-1);
-}
-*/
 HugeInt HugeInt::operator*(int coff)
 {
 	for (int i = 0; i < num_list.size() ; ++i)
